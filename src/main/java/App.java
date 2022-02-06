@@ -27,6 +27,19 @@ public class App {
         }
 
         port(port);
+
+        staticFileLocation("/public");
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
