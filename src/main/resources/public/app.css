@@ -1,0 +1,117 @@
+  @font-face {
+    font-family: 'Killa ';
+    font-style: bold;
+    font-weight: normal;
+    src: local('Bulletto Killa¬ Regular'), url('Bulletto Killa.woff') format('woff');
+  }
+  .name{
+    font-family: Killa;
+  }
+  textarea:hover,
+   input:hover,
+   textarea:active,
+   input:active,
+   textarea:focus,
+   input:focus,
+   button:focus,
+   button:active,
+   button:hover,
+   label:focus,
+   .btn:active,
+   .btn.active
+   {
+       outline:0px !important;
+       -webkit-appearance:none;
+       box-shadow: none !important;
+   }
+   .btn:focus {
+     outline: none;
+     box-shadow: none;
+   }
+   .custom-card{
+       border-radius: 10px;
+   }
+   .color{
+       color: red;
+   }
+   .custom-card{
+       display: flex;
+       flex-wrap: wrap;
+
+   }
+   .custom-cards{
+       width: 20%;
+       border: .1px solid silver;
+
+       margin: 10px;
+       border-radius: 10px;
+   }
+
+   /* Responsive Website */
+   @media(max-width: 992px){
+       .custom-cards{
+           width: 50%;
+       }
+   }
+   @media(max-width:767px){
+       .custom-cards{
+           width: 50%;
+       }
+   }@media(max-width:576px){
+       .custom-cards{
+           width: 100%;
+       }
+   }
+
+   .form-group{
+       width: 100%
+   }
+   .name{
+       color: silver;
+   }
+   .black{
+       background: black;
+   }
+   .navigation{
+       height: 50px
+   }
+   .red{
+       color: red
+   }.green{
+        color: lawngreen
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
