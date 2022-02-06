@@ -31,6 +31,13 @@ public class App {
         staticFileLocation("/public");
 
 
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("animals", Animal.all());
+            model.put("endangered", Endangered.all());
+            model.put("sightings", Sighting.all());
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
 
