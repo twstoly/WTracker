@@ -39,6 +39,19 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
+        post("/endangered_sighting", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String rangerName = request.queryParams("rangeName");
+            int animalIdSelected = Integer.parseInt(request.queryParams("endangeredAnimalSelected"));
+            String location = request.queryParams("location");
+            Sighting sighting = new Sighting(location,rangerName,animalIdSelected );
+            sighting.save();
+            model.put("sighting", sighting);
+            model.put("endangered", Endangered.all());
+            String animal = Endangered.find(animalIdSelected).getName();
+            model.put("animal", animal);
+            return new ModelAndView(model,"success.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
 
