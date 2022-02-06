@@ -45,6 +45,76 @@
                 </div>
             </div>
         </div>
+        <br>
+        <div class="row">
+            <h4 class="">Add Sighting information about previously tracked animals</h4>
+            <p class="text-muted"><i class="fas fa-info-circle"></i> Add animal sighting based on location spotted</p>
+            <div class="col-sm">
+                <div class="common-sight">
+                    <h5> Common Animal Sighting </h5>
+                    <div class="custom-card" >
+                        <div class="card-body custom-cards">
+                        {{#if animals}}
+                            <p style="font-weight: bold">Please add More Information about the tracked animal </p>
+                            <hr>
+                            <form action="/sighting" method="post">
+                                <div class="form-group">
+                                    <label for="animalSelected">Select Animal</label>
+                                    <select class="form-control" id="animalSelected" name="animalSelected">
+                                        {{#each animals}}
+                                            <option value="{{id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="location">Location Seen:</label>
+                                    <input type="text" required class="form-control" name="location" id="location" placeholder="location">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rangerName">Your Name:</label>
+                                    <input type="text" required class="form-control" name="rangerName" id="rangerName" placeholder="rangerName">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-dark">Add Sighting</button>
+                            </form>
+                        {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="endangered-sighted">
+                    <h5> Endangered Animal Sighting </h5>
+                    <p><b>Please add More Information about the tracked animal </b></p>
+                    <div class="custom-card" >
+                        <div class="card-body custom-cards">
+                            {{#if endangered}}
+                                <form action="/endangered_sighting" method="post">
+                                    <hr>
+                                    <label>Select Endangered Animal:</label>
+                                    <select name="endangeredAnimalSelected">
+                                        {{#each endangered}}
+                                            <option value="{{id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <hr>
+                                    <label>Location Spotted:</label>
+                                    <input type="text" name="location">
+                                    <hr>
+                                    <label>Your Name:</label>
+                                    <input type="text" name="rangerName">
+                                    <hr>
+                                    <button type="submit" class="add-sight">Add sighting</button>
+                                </form>
+                            {{else}}
+                                You have no Endangered Animal In your List kindly Visit add Animal To Report Sighting and check the checkbox button. . .
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 {{/partial}}
