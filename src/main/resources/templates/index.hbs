@@ -1,0 +1,89 @@
+{{#partial "content"}}
+    <div class="container">
+        <div class="row">
+            <h4 class="">Previously Tracked Animals</h4>
+            <p class="text-muted"><i class="fas fa-info-circle"></i>View animal sighting by clicking information Button.</p>
+            <div class="col-sm">
+                <div class="common-sight">
+                     <h5 class="common">Common Animals</h5>
+                    <div class="custom-card" >
+                        <div class="card-body custom-cards">
+                            {{#if animals}}
+                                {{#each animals}}
+                                    <div>
+                                        <p><b>{{name}}</b></p>
+<!--                                        <hr> <h4>sightingssize</h4>-->
+                                        <a class=" btn btn-dark" href="/animal/{{id}}">Information about Sightings
+                                        </a>
+                                        <hr>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="common-sight">
+                    <h5 class="endangered">Endangered Animals</h5>
+                    <div class="custom-card" >
+                        <div class="card-body custom-cards">
+                            {{#if endangered}}
+                                {{#each endangered}}
+                                    <div class="text-center">
+                                        <p>{{name}}</p>
+                                        <h4>{{getSightings.size}}</h4>
+                                        <a href="/endangered_animal/{{id}}"><p class="add-sight">More Info</p></a>
+                                    </div>
+                                {{/each}}
+                    {{else}}
+                        <a class="btn btn-dark" href="/animal/new">Add Animal to Report a Sighting</a>
+                    {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{{/partial}}
+{{> layout.hbs}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
