@@ -53,6 +53,20 @@ public class App {
             return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
 
+        post("/sighting", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String rangerName = request.queryParams("rangerName");
+            int animalIdSelected = Integer.parseInt(request.queryParams("animalSelected"));
+            String location = request.queryParams("location");
+            Sighting sighting = new Sighting(location, rangerName, animalIdSelected);
+            sighting.save();
+            model.put("sighting", sighting);
+            model.put("animals", Animal.all());
+            String animal = Animal.find(animalIdSelected).getName();
+            model.put("animal", animal);
+
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
 
