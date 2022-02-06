@@ -104,6 +104,12 @@ public class App {
             return null;
         });
 
+        get("/animal/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            Animal animal = Animal.find(Integer.parseInt(request.params("id")));
+            model.put("animal", animal);
+            return new ModelAndView(model, "animal-details.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
 
