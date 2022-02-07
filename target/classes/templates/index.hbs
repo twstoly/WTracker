@@ -31,14 +31,15 @@
                         <div class="card-body custom-cards">
                             {{#if endangered}}
                                 {{#each endangered}}
-                                    <div class="text-center">
-                                        <p>{{name}}</p>
+                                    <div>
+                                        <p><b>{{name}}</b></p>
                                         <h4>{{getSightings.size}}</h4>
-                                        <a href="/endangered_animal/{{id}}"><p class="add-sight">More Info</p></a>
+                                        <a class=" btn btn-dark" href="/endangered_animal/{{id}}">Information about Sightings</a>
+                                        <hr>
                                     </div>
                                 {{/each}}
                     {{else}}
-                        <a class="btn btn-dark" href="/animal/new">Add Animal to Report a Sighting</a>
+                        <a class="btn btn-dark" href="/enda/new">Add Animal to Report a Sighting</a>
                     {{/if}}
                         </div>
                     </div>
@@ -55,7 +56,7 @@
                     <div class="custom-card" >
                         <div class="card-body custom-cards">
                         {{#if animals}}
-                            <p style="font-weight: bold">Please add More Information about the tracked animal </p>
+                            <p >Please add More Information about the tracked animal </p>
                             <hr>
                             <form action="/sighting" method="post">
                                 <div class="form-group">
@@ -91,21 +92,22 @@
                         <div class="card-body custom-cards">
                             {{#if endangered}}
                                 <form action="/endangered_sighting" method="post">
-                                    <hr>
-                                    <label>Select Endangered Animal:</label>
-                                    <select name="endangeredAnimalSelected">
+                                    <label for="endangeredAnimalSelected">Select Endangered Animal:</label>
+                                    <select class="form-control" id="animalSelected"  name="endangeredAnimalSelected">
                                         {{#each endangered}}
                                             <option value="{{id}}">{{name}}</option>
                                         {{/each}}
                                     </select>
-                                    <hr>
-                                    <label>Location Spotted:</label>
-                                    <input type="text" name="location">
-                                    <hr>
-                                    <label>Your Name:</label>
-                                    <input type="text" name="rangerName">
-                                    <hr>
-                                    <button type="submit" class="add-sight">Add sighting</button>
+                                    <div class="form-group ">
+                                        <label for="location">Location Spotted ~</label>
+                                        <input type="text" required class="form-control" name="location" id="location" placeholder="location">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rangerName">Your Name:</label>
+                                        <input type="text" required class="form-control" name="rangerName" id="rangerName" placeholder="rangerName">
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-dark">Add Sighting</button>
                                 </form>
                             {{else}}
                                 You have no Endangered Animal In your List kindly Visit add Animal To Report Sighting and check the checkbox button. . .
@@ -115,20 +117,6 @@
                 </div>
             </div>
         </div>
-
-<!--        <div class="row">-->
-<!--            <div class="col-sm">-->
-<!--                <img class="img-fluid" alt="Responsive image" src="https://images.unsplash.com/photo-1493916665398-143bdeabe500?https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnF8Q0wq6XvJN1pg4TQAy_6eB6J73F4nhTkQ&usqp=CAU.jpg">-->
-<!--                <p>A present-day example of the over-hunting of a species can be seen in the oceans as populations of certain whales have been greatly reduced. Large whales like the blue whale, bowhead whale, finback whale, gray whale, sperm whale, and humpback whale are some of the eight whales which are currently still included on the Endangered Species List. Actions have been taken to attempt a reduction in whaling and increase population sizes. The actions include prohibiting all whaling in United States waters, the formation of the CITES treaty which protects all whales, along with the formation of the International Whaling Commission (IWC). But even though all of these movements have been put in place, countries such as Japan continue to hunt and harvest whales under the claim of "scientific purposes".[16] Over-hunting, climatic change and habitat loss leads in landing species in endangered species list. It could mean that extinction rates could increase to a large extent in the future.</p>-->
-<!--            </div>-->
-<!--            <div class="col-sm">-->
-<!--                <p>An endangered species is a species that is very likely to become extinct in the near future, either worldwide or in a particular political jurisdiction. Endangered species may be at risk due to factors such as habitat loss, poaching and invasive species.-->
-<!--                    Ever since mankind began hunting to preserve itself, over-hunting and fishing have been a large and dangerous problem. Of all the species who became extinct due to interference from mankind, the dodo, passenger pigeon, great auk, Tasmanian tiger and Steller's sea cow are some of the more well known examples; with the bald eagle, grizzly bear, American bison, Eastern timber wolf and sea turtle having been poached to near-extinction. Many began as food sources seen as necessary for survival but became the target of sport. However, due to major efforts to prevent extinction, the bald eagle, or Haliaeetus leucocephalus is now under the category of Least Concern on the red list.-->
-<!--                    An endangered species is a species that is very likely to become extinct in the near future, either worldwide or in a particular political jurisdiction. Endangered species may be at risk due to factors such as habitat loss, poaching and invasive species.-->
-<!--                    Ever since mankind began hunting to preserve itself, over-hunting and fishing have been a large and dangerous problem. Of all the species who became extinct due to interference from mankind, the dodo, passenger pigeon, great auk, Tasmanian tiger and Steller's sea cow are some of the more well known examples; with the bald eagle, grizzly bear, American bison, Eastern timber wolf and sea turtle having been poached to near-extinction. Many began as food sources seen as necessary for survival but became the target of sport. However, due to major efforts to prevent extinction, the bald eagle, or Haliaeetus leucocephalus is now under the category of Least Concern on the red list.</p>-->
-<!--                <p class="btn btn-dark"><a href="/animal/new">Add Animal</a></p>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 {{/partial}}
 {{> layout.hbs}}
