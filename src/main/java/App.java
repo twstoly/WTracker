@@ -1,21 +1,17 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import models.Animal;
 import models.Endangered;
 import models.Sighting;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-
 import static spark.Spark.*;
-import static spark.Spark.get;
 
 public class App {
     public static void main(String[] args) {
-
         ProcessBuilder process = new ProcessBuilder();
         int port;
 
@@ -35,7 +31,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             model.put("animals", Animal.all());
             model.put("endangered", Endangered.all());
-            model.put("sightings", Sighting.all());
+            model.put("sightings",Sighting.all());
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -120,113 +116,5 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

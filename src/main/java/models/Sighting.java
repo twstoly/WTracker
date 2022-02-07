@@ -1,12 +1,12 @@
 package models;
 
-import db.DB;
-import db.DatabaseManagement;
-import org.sql2o.Connection;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import db.DB;
+import db.DatabaseManagement;
+import org.sql2o.*;
 
 public class  Sighting implements DatabaseManagement {
     private String location;
@@ -15,9 +15,10 @@ public class  Sighting implements DatabaseManagement {
     private int animal_id;
 
     public Sighting(String location,String ranger_name,int animal_id) {
-       this.location = location;
-       this.ranger_name = ranger_name;
-       this.animal_id = animal_id;
+        this.location = location;
+        this.ranger_name = ranger_name;
+        this.animal_id = animal_id;
+
     }
 
     public String getLocation() {
@@ -74,9 +75,10 @@ public class  Sighting implements DatabaseManagement {
     public static Sighting find(int id) {
         try(Connection con = DB.sql2o.open()) {
             String sql = "SELECT * FROM sightings WHERE id=:id";
-            return con.createQuery(sql)
+            Sighting sighting = con.createQuery(sql)
                     .addParameter("id", id)
                     .executeAndFetchFirst(Sighting.class);
+            return sighting;
 
         }
     }

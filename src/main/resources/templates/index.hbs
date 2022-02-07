@@ -1,6 +1,10 @@
 {{#partial "content"}}
     <div class="container">
+
+        <br>
+        <a class="btn btn-dark" href="/animal/new">Add Animal to Report a Sighting</a>
         <div class="row">
+
             <h4 class="">Previously Tracked Animals</h4>
             <p class="text-muted"><i class="fas fa-info-circle"></i>View animal sighting by clicking information Button.</p>
             <div class="col-sm">
@@ -31,14 +35,15 @@
                         <div class="card-body custom-cards">
                             {{#if endangered}}
                                 {{#each endangered}}
-                                    <div class="text-center">
-                                        <p>{{name}}</p>
+                                    <div>
+                                        <p><b>{{name}}</b></p>
                                         <h4>{{getSightings.size}}</h4>
-                                        <a href="/endangered_animal/{{id}}"><p class="add-sight">More Info</p></a>
+                                        <a class=" btn btn-dark" href="/endangered_animal/{{id}}">Information about Sightings</a>
+                                        <hr>
                                     </div>
                                 {{/each}}
                     {{else}}
-                        <a class="btn btn-dark" href="/animal/new">Add Animal to Report a Sighting</a>
+                        <a class="btn btn-dark" href="/enda/new">Add Animal to Report a Sighting</a>
                     {{/if}}
                         </div>
                     </div>
@@ -55,7 +60,7 @@
                     <div class="custom-card" >
                         <div class="card-body custom-cards">
                         {{#if animals}}
-                            <p style="font-weight: bold">Please add More Information about the tracked animal </p>
+                            <p >Please add More Information about the tracked animal </p>
                             <hr>
                             <form action="/sighting" method="post">
                                 <div class="form-group">
@@ -91,21 +96,22 @@
                         <div class="card-body custom-cards">
                             {{#if endangered}}
                                 <form action="/endangered_sighting" method="post">
-                                    <hr>
-                                    <label>Select Endangered Animal:</label>
-                                    <select name="endangeredAnimalSelected">
+                                    <label for="endangeredAnimalSelected">Select Endangered Animal:</label>
+                                    <select class="form-control" id="animalSelected"  name="endangeredAnimalSelected">
                                         {{#each endangered}}
                                             <option value="{{id}}">{{name}}</option>
                                         {{/each}}
                                     </select>
-                                    <hr>
-                                    <label>Location Spotted:</label>
-                                    <input type="text" name="location">
-                                    <hr>
-                                    <label>Your Name:</label>
-                                    <input type="text" name="rangerName">
-                                    <hr>
-                                    <button type="submit" class="add-sight">Add sighting</button>
+                                    <div class="form-group ">
+                                        <label for="location">Location Spotted ~</label>
+                                        <input type="text" required class="form-control" name="location" id="location" placeholder="location">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rangerName">Your Name:</label>
+                                        <input type="text" required class="form-control" name="rangerName" id="rangerName" placeholder="rangerName">
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-dark">Add Sighting</button>
                                 </form>
                             {{else}}
                                 You have no Endangered Animal In your List kindly Visit add Animal To Report Sighting and check the checkbox button. . .

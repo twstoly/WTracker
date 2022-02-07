@@ -1,33 +1,4 @@
-  @font-face {
-    font-family: 'Killa ';
-    font-style: bold;
-    font-weight: normal;
-    src: local('Bulletto Killa¬ Regular'), url('Bulletto Killa.woff') format('woff');
-  }
-  .name{
-    font-family: Killa;
-  }
-  textarea:hover,
-   input:hover,
-   textarea:active,
-   input:active,
-   textarea:focus,
-   input:focus,
-   button:focus,
-   button:active,
-   button:hover,
-   label:focus,
-   .btn:active,
-   .btn.active
-   {
-       outline:0px !important;
-       -webkit-appearance:none;
-       box-shadow: none !important;
-   }
-   .btn:focus {
-     outline: none;
-     box-shadow: none;
-   }
+
    .custom-card{
        border-radius: 10px;
    }
