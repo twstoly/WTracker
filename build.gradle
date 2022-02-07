@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'application'
 }
-mainClassName = 'App'
+mainClassName = 'Main'
 
 group 'com.twst'
 version '1.0-SNAPSHOT'

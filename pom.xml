@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>wildtrac</artifactId>
+    <artifactId>WTracker</artifactId>
     <version>1.0</version>
     <dependencies>
         <!-- We need to list out ALL dependencies our project needs. If you have dependencies not listed here, but sure to add them -->
@@ -77,7 +77,7 @@
                     <!-- Change this to YOUR application name! -->
                     <appName>wildtrac</appName>
                     <processTypes>
-                        <web>java -jar target/wildtrac-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/WTracker-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>

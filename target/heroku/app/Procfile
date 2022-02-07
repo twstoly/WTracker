@@ -1,1 +1,1 @@
-web: java -jar target/wildtrac-1.0-jar-with-dependencies.jar
+web: java -jar target/WTracker-1.0-jar-with-dependencies.jar
