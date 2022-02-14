@@ -1,5 +1,4 @@
-
-   .custom-card{
+    .custom-card{
        border-radius: 10px;
    }
    .color{
@@ -8,7 +7,6 @@
    .custom-card{
        display: flex;
        flex-wrap: wrap;
-
    }
    .custom-cards{
        width: 20%;
@@ -17,7 +15,6 @@
        margin: 10px;
        border-radius: 10px;
    }
-
    /* Responsive Website */
    @media(max-width: 992px){
        .custom-cards{
@@ -51,6 +48,12 @@
    }.green{
         color: lawngreen
     }
+.logo{
+    border-radius: 50%;
+}
+.bottom{
+    box-shadow: 1px 1px 10px black;
+}
 
 
 
@@ -70,19 +73,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
